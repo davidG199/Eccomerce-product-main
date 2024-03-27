@@ -1,14 +1,14 @@
 import React from "react";
-import logo from "../../assets/logo.svg";
-import cart from "../../assets/icon-cart.svg";
-import avatar from "../../public/images/image-avatar.png";
+import Logo from "../../assets/logo.svg";
+import Cart from "../../assets/icon-cart.svg";
+import Avatar from "../../public/images/image-avatar.png";
 
 function Nav() {
   return (
     <nav className=" flex py-7 items-center border-b w-full justify-between">
       <div className=" flex">
         <li>
-          <img src={logo} alt="logo-main" />
+          <img src={Logo} alt="logo-main" className="text-white"/>
         </li>
         <div className="flex gap-8 ml-16">
           <li className=" text-[var(--Dark-grayish-blue)]">Collection</li>
@@ -20,10 +20,10 @@ function Nav() {
       </div>
       <div className="flex items-center gap-10">
         <a>
-          <img src={cart} alt="icon-cart" />
+          <img src={Cart} alt="icon-cart" />
         </a>
         <a>
-          <img src={avatar} alt="avatar-nav" className=" w-11 h-11" />
+          <img src={Avatar} alt="avatar-nav" className=" w-11 h-11" />
         </a>
       </div>
     </nav>

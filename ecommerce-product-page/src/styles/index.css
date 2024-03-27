@@ -4,6 +4,7 @@
 
 :root{
     --Orange: hsl(26, 100%, 55%);
+    --Orange-transparent: hsl(26, 100%, 90%);
     --Pale-orange:hsl(25, 100%, 94%);
     --Very-dark-blue:hsl(220, 13%, 13%);
     --Dark-grayish-blue:hsl(219, 9%, 45%);
