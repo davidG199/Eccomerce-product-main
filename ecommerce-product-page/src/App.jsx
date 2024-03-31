@@ -6,19 +6,6 @@ import CounterButton from "./components/CounterButton";
 import "./styles/App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const incrementCount = () =>{
-    setCount (count + 1)
-  }
-
-  const decrementCount = () =>{
-    if(count > 0){
-      setCount(count - 1)
-    }
-  }
-
-
   return (
     <>
       <main className=" w-[75%] flex  items-center justify-center flex-col">
@@ -48,11 +35,8 @@ function App() {
               <span className="line-through text-[var(--Grayish-blue)] ">$250.0</span>
             </div>
             <div className="flex w-full h-12 gap-5">
-              <CounterButton
-                onIncrement={incrementCount} onDecrement={decrementCount}
-              />
-              <ButtonAddCart
-               />
+              <CounterButton/>
+              <ButtonAddCart/>
             </div>
           </section>
         </div>
