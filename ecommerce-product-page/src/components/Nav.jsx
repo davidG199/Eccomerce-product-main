@@ -1,10 +1,13 @@
-import React from "react";
+import { useContext } from "react";
 import Logo from "../../assets/logo.svg";
 import Cart from "../../assets/icon-cart.svg";
 import Avatar from "../../public/images/image-avatar.png";
 import "../styles/index.css"
+import { GeneralContext } from "../context";
 
 function Nav() {
+  const context = useContext(GeneralContext)
+
   return (
     <nav className=" flex py-7 items-center border-b w-full justify-between">
       <div className=" flex">
@@ -33,7 +36,12 @@ function Nav() {
       </div>
       <div className="flex items-center gap-10">
         <a>
-          <img src={Cart} alt="icon-cart" />
+          <img 
+          src={Cart} 
+          alt="icon-cart" 
+          onClick={() => context.openCartProduct()}
+          className="cursor-pointer"
+          />
         </a>
         <a className="h-[50px] w-[50px] transition duration-300">
           <img

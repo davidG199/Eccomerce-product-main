@@ -1,17 +1,18 @@
-import { useState } from "react";
 import { Nav } from "./components/Nav";
 import { ButtonAddCart } from "./components/ButtonAddCart";
+import { ContextProvider } from "./context";
 import CounterButton from "./components/CounterButton";
 
 import "./styles/App.css";
+import CartProduct from "./components/CartProduct";
 
 function App() {
   return (
-    <>
+    <ContextProvider>
       <main className=" w-[75%] flex  items-center justify-center flex-col">
         <Nav />
 
-        <div className=" w-full px-12 py-20 grid grid-cols-2 gap-28">
+        <div className=" w-full px-12 py-16 grid grid-cols-2 gap-28 ">
           {/* images section */}
           <section className=""></section>
           <section className="pt-8">
@@ -38,10 +39,11 @@ function App() {
               <CounterButton/>
               <ButtonAddCart/>
             </div>
+        <CartProduct/>
           </section>
         </div>
       </main>
-    </>
+    </ContextProvider>
   );
 }
 
