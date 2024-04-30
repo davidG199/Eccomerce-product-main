@@ -6,7 +6,7 @@ import "../styles/index.css"
 import { GeneralContext } from "../context";
 
 function Nav() {
-  const {cartProduct, openCartProduct, closeCartProduct} = useContext(GeneralContext)
+  const {cartProduct, openCartProduct, closeCartProduct,count, cartCount, product} = useContext(GeneralContext)
 
   const toggleCart = () => {
     if (cartProduct) {
@@ -43,14 +43,20 @@ function Nav() {
         </div>
       </div>
       <div className="flex items-center gap-10">
-        <a>
+        <div>
+
+        <a onClick={() => toggleCart()} className="cursor-pointer">
           <img 
           src={Cart} 
           alt="icon-cart" 
-          onClick={() => toggleCart()}
-          className="cursor-pointer"
+          
+          
           />
         </a>
+        {product && <span className=" bg-[var(--Orange)] text-white w-5 text-center rounded-xl text-[10px] absolute top-9 right-[275px]" >
+          {count}
+        </span>}
+          </div>
         <a className="h-[50px] w-[50px] transition duration-300">
           <img
             src={Avatar}

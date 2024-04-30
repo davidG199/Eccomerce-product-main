@@ -1,12 +1,14 @@
 import { Nav } from "./components/Nav";
 import { ButtonAddCart } from "./components/ButtonAddCart";
-import { ContextProvider } from "./context";
+import { ContextProvider, GeneralContext } from "./context";
 import CounterButton from "./components/CounterButton";
-
 import "./styles/App.css";
 import CartProduct from "./components/CartProduct";
+import { useContext } from "react";
 
 function App() {
+  const context = useContext(GeneralContext)
+
   return (
     <ContextProvider>
       <main className=" w-[75%] flex  items-center justify-center flex-col">
@@ -37,7 +39,7 @@ function App() {
             </div>
             <div className="flex w-full h-12 gap-5">
               <CounterButton/>
-              <ButtonAddCart/>
+              <ButtonAddCart />
             </div>
           </section>
         </div>
