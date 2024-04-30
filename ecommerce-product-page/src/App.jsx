@@ -39,10 +39,10 @@ function App() {
               <CounterButton/>
               <ButtonAddCart/>
             </div>
-        <CartProduct/>
           </section>
         </div>
       </main>
+        <CartProduct/>
     </ContextProvider>
   );
 }

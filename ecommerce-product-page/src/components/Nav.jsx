@@ -6,10 +6,18 @@ import "../styles/index.css"
 import { GeneralContext } from "../context";
 
 function Nav() {
-  const context = useContext(GeneralContext)
+  const {cartProduct, openCartProduct, closeCartProduct} = useContext(GeneralContext)
+
+  const toggleCart = () => {
+    if (cartProduct) {
+      closeCartProduct();
+    } else {
+      openCartProduct();
+    }
+  };
 
   return (
-    <nav className=" flex py-7 items-center border-b w-full justify-between">
+    <nav className=" flex py-7 items-center border-b w-full justify-between z-10">
       <div className=" flex">
         <li>
           <img src={Logo} alt="logo-main" className="text-white" />
@@ -39,7 +47,7 @@ function Nav() {
           <img 
           src={Cart} 
           alt="icon-cart" 
-          onClick={() => context.openCartProduct()}
+          onClick={() => toggleCart()}
           className="cursor-pointer"
           />
         </a>

@@ -1,19 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import PlusIcon from "../../assets/icon-plus.svg";
 import MinusIcon from "../../assets/icon-minus.svg";
+import { GeneralContext } from "../context";
 
 function CounterButton() {
-  const [count, setCount] = useState(0);
-
-  const incrementCount = () =>{
-    setCount (count + 1)
-  }
-
-  const decrementCount = () =>{
-    if(count > 0){
-      setCount(count - 1)
-    }
-  }
+  const {count, decrementCount, incrementCount} = useContext(GeneralContext)
 
   return (
     <div className="flex items-center justify-around bg-[var(--Light-grayish-blue)] grow-[1] rounded-lg">

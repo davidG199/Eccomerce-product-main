@@ -33,12 +33,13 @@ nav .nav-items ul li {
 nav .nav-items ul li::before {
   content: "";
   position: absolute;
-  bottom: -38px; /* Colocar la barra en el borde inferior */
+  bottom: -38px; 
   left: 0;
   height: 5px;
   background-color: var(--Orange);
   transform: scaleX(0);
   transition: transform 0.3s ease 0s;
+  z-index: -10;
 }
 
 nav .nav-items ul li:hover::before {
