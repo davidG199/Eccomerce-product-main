@@ -1,27 +1,27 @@
+import { useContext } from "react";
 import { Nav } from "./components/Nav";
 import { ButtonAddCart } from "./components/ButtonAddCart";
 import { ContextProvider, GeneralContext } from "./context";
 import CounterButton from "./components/CounterButton";
-import "./styles/App.css";
 import CartProduct from "./components/CartProduct";
-import { useContext } from "react";
+import Carrousel from "./components/Carrousel";
+import "./styles/App.css";
 
 function App() {
-  const context = useContext(GeneralContext)
+  const context = useContext(GeneralContext);
 
   return (
     <ContextProvider>
       <main className=" w-[75%] flex  items-center justify-center flex-col">
         <Nav />
-
-        <div className=" w-full px-12 py-16 grid grid-cols-2 gap-28 ">
-          {/* images section */}
-          <section className=""></section>
+        <div className=" w-full px-12 py-[72px] grid grid-cols-2 gap-28 ">
+          <section className="">
+            <Carrousel/>
+          </section>
           <section className="pt-8">
             <span className="text-[var(--Orange)] font-bold tracking-wider uppercase">
               Sneaker Company
             </span>
-
             <h1 className=" text-5xl font-bold mt-4">
               Fall Limited Edition Sneakers
             </h1>
@@ -32,19 +32,23 @@ function App() {
             </p>
             <div className="flex items-center">
               <span className="text-3xl font-bold mr-4">$125.00</span>
-              <span className="text-[var(--Orange)] font-bold bg-[var(--Orange-transparent)] px-1.5 py-px rounded-md">50%</span>
+              <span className="text-[var(--Orange)] font-bold bg-[var(--Orange-transparent)] px-1.5 py-px rounded-md">
+                50%
+              </span>
             </div>
             <div className="mt-1.5 mb-6">
-              <span className="line-through text-[var(--Grayish-blue)] ">$250.0</span>
+              <span className="line-through text-[var(--Grayish-blue)] ">
+                $250.0
+              </span>
             </div>
             <div className="flex w-full h-12 gap-5">
-              <CounterButton/>
+              <CounterButton />
               <ButtonAddCart />
             </div>
           </section>
         </div>
       </main>
-        <CartProduct/>
+      <CartProduct />
     </ContextProvider>
   );
 }

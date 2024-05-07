@@ -4,6 +4,7 @@
 
 :root {
   --Orange: hsl(26, 100%, 55%);
+  --Orange-hover: hsl(26, 100%, 75%);
   --Orange-transparent: hsl(26, 100%, 90%);
   --Pale-orange: hsl(25, 100%, 94%);
   --Very-dark-blue: hsl(220, 13%, 13%);
@@ -33,7 +34,7 @@ nav .nav-items ul li {
 nav .nav-items ul li::before {
   content: "";
   position: absolute;
-  bottom: -41px; 
+  bottom: -34px; 
   left: 0;
   height: 5px;
   background-color: var(--Orange);
@@ -45,4 +46,8 @@ nav .nav-items ul li::before {
 nav .nav-items ul li:hover::before {
   width: 100%;
   transform: scaleX(1)
+}
+
+.btn{
+  box-shadow: 0px 20px 25px -5px hsla(26, 100%, 55%, 0.3);
 }

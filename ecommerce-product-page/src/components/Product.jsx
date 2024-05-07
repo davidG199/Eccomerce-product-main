@@ -8,15 +8,15 @@ function Product() {
 
   let totalPrice = context.count * 12500;
 
-let price = totalPrice.toString()
+  let price = totalPrice.toString();
 
-let firstThreeDigits = price.slice(0, 3);
+  let firstThreeDigits = price.slice(0, 3);
 
-// Obtener el resto del precio
-let restDigits = price.slice(3);
+  // Obtener el resto del precio
+  let restDigits = price.slice(3);
 
-// Formar el precio con el punto después del tercer dígito
-price = firstThreeDigits + '.' + restDigits;
+  // Formar el precio con el punto después del tercer dígito
+  price = firstThreeDigits + "." + restDigits;
 
   return (
     <div className="flex flex-col w-full h-full">
@@ -33,7 +33,10 @@ price = firstThreeDigits + '.' + restDigits;
               <p>
                 $125.00
                 <span> x {context.count}</span>
-                <span className="font-bold text-[var(--Black-transparent)]"> ${price}</span>
+                <span className="font-bold text-[var(--Black-transparent)]">
+                  {" "}
+                  ${price}
+                </span>
               </p>
             </span>
           </span>

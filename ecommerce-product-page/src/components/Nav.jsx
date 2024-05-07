@@ -2,11 +2,18 @@ import { useContext } from "react";
 import Logo from "../../assets/logo.svg";
 import Cart from "../../assets/icon-cart.svg";
 import Avatar from "../../public/images/image-avatar.png";
-import "../styles/index.css"
+import "../styles/index.css";
 import { GeneralContext } from "../context";
 
 function Nav() {
-  const {cartProduct, openCartProduct, closeCartProduct,count, cartCount, product} = useContext(GeneralContext)
+  const {
+    cartProduct,
+    openCartProduct,
+    closeCartProduct,
+    count,
+    cartCount,
+    product,
+  } = useContext(GeneralContext);
 
   const toggleCart = () => {
     if (cartProduct) {
@@ -17,7 +24,7 @@ function Nav() {
   };
 
   return (
-    <nav className=" flex py-7 items-center border-b w-full justify-between z-10">
+    <nav className=" flex py-5 items-center border-b w-full justify-between z-10">
       <div className=" flex">
         <li>
           <img src={Logo} alt="logo-main" className="text-white" />
@@ -44,19 +51,15 @@ function Nav() {
       </div>
       <div className="flex items-center gap-10">
         <div>
-
-        <a onClick={() => toggleCart()} className="cursor-pointer">
-          <img 
-          src={Cart} 
-          alt="icon-cart" 
-          
-          
-          />
-        </a>
-        {product && <span className=" bg-[var(--Orange)] text-white w-5 text-center rounded-xl text-[10px] absolute top-9 right-[275px]" >
-          {count}
-        </span>}
-          </div>
+          <a onClick={() => toggleCart()} className="cursor-pointer">
+            <img src={Cart} alt="icon-cart" />
+          </a>
+          {product && (
+            <span className=" bg-[var(--Orange)] text-white w-5 text-center rounded-xl text-[10px] absolute top-9 right-[275px]">
+              {count}
+            </span>
+          )}
+        </div>
         <a className="h-[50px] w-[50px] transition duration-300">
           <img
             src={Avatar}

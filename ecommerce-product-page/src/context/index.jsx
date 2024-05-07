@@ -5,36 +5,33 @@ export const GeneralContext = createContext();
 export const ContextProvider = ({ children }) => {
   //cart check open and close
   const [cartProduct, setCartProduct] = useState(false);
-  const openCartProduct = () => setCartProduct(true)
-  const closeCartProduct = () => setCartProduct(false)
+  const openCartProduct = () => setCartProduct(true);
+  const closeCartProduct = () => setCartProduct(false);
 
   //counter button
   const [count, setCount] = useState(0);
 
-  const incrementCount = () =>{
-    setCount (count + 1)
-  }
+  const incrementCount = () => {
+    setCount(count + 1);
+  };
 
-  const decrementCount = () =>{
-    if(count > 0){
-      setCount(count - 1)
+  const decrementCount = () => {
+    if (count > 0) {
+      setCount(count - 1);
     }
-  }
+  };
 
   //add product to cart
-  const [product, setProduct] = useState(false)
+  const [product, setProduct] = useState(false);
 
-  //counter cart product
-
-
-  const addProduct = () =>{
+  const addProduct = () => {
     if (count == 0) {
-      alert("enter the quantity of products")
-    } else{
-      setProduct(true)
+      alert("enter the quantity of products");
+    } else {
+      setProduct(true);
     }
-  }
-  
+  };
+
   return (
     <GeneralContext.Provider
       value={{

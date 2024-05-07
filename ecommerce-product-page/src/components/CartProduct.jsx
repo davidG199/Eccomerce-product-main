@@ -6,17 +6,16 @@ function CartProduct() {
   const context = useContext(GeneralContext);
 
   const CartContent = () => {
-
     if (!context.product) {
       return (
         <p className=" text-[var(--Dark-grayish-blue)] font-bold">
-        Your cart is empty
-      </p>
-      )  
-    } else{
-      return <Product/>
+          Your cart is empty
+        </p>
+      );
+    } else {
+      return <Product />;
     }
-  }
+  };
 
   return (
     <div
@@ -29,7 +28,7 @@ function CartProduct() {
           <p className=" font-bold px-6 py-5 border-b">Cart</p>
         </div>
         <div className="h-full flex justify-center items-center">
-          <CartContent/>
+          <CartContent />
           {/* <Product/> */}
         </div>
       </div>

@@ -4,16 +4,26 @@ import MinusIcon from "../../assets/icon-minus.svg";
 import { GeneralContext } from "../context";
 
 function CounterButton() {
-  const {count, decrementCount, incrementCount} = useContext(GeneralContext)
+  const { count, decrementCount, incrementCount } = useContext(GeneralContext);
 
   return (
     <div className="flex items-center justify-around bg-[var(--Light-grayish-blue)] grow-[1] rounded-lg">
-      <span>
-        <img src={MinusIcon} alt="minus-icon" className="cursor-pointer" onClick={decrementCount} />
+      <span className="hover:text-[var(----Orange-transparent)]">
+        <img
+          src={MinusIcon}
+          alt="minus-icon"
+          className="cursor-pointer hover:bg-[var(----Orange-transparent)]"
+          onClick={decrementCount}
+        />
       </span>
       <span className="font-bold">{count}</span>
       <span>
-        <img src={PlusIcon} alt="plus-icon" className="cursor-pointer" onClick={incrementCount} />
+        <img
+          src={PlusIcon}
+          alt="plus-icon"
+          className="cursor-pointer"
+          onClick={incrementCount}
+        />
       </span>
     </div>
   );
