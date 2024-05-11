@@ -32,6 +32,35 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
+  //carrousel
+  const [carrousel, setCarrousel] = useState(false);
+  const openCarrousel = () => setCarrousel(true);
+  const closeCarrousel = () => setCarrousel(false);
+
+  const images = {
+    slides: {
+      image1: "../../public/images/image-product-1.jpg",
+      image2: "../../public/images/image-product-2.jpg",
+      image3: "../../public/images/image-product-3.jpg",
+      image4: "../../public/images/image-product-4.jpg",
+    },
+    slidesThumbnail: {
+      thumbnail1: "../../public/images/image-product-1-thumbnail.jpg",
+      thumbnail2: "../../public/images/image-product-2-thumbnail.jpg",
+      thumbnail3: "../../public/images/image-product-3-thumbnail.jpg",
+      thumbnail4: "../../public/images/image-product-4-thumbnail.jpg",
+    },
+  };
+
+  // change state of carrousel
+  const togleCarrousel = () => {
+    if (carrousel) {
+      closeCarrousel();
+    } else {
+      openCarrousel();
+    }
+  };
+
   return (
     <GeneralContext.Provider
       value={{
@@ -46,6 +75,12 @@ export const ContextProvider = ({ children }) => {
         addProduct,
         product,
         setProduct,
+        carrousel,
+        setCarrousel,
+        openCarrousel,
+        closeCarrousel,
+        togleCarrousel,
+        images,
       }}
     >
       {children}
