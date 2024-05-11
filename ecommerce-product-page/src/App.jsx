@@ -6,6 +6,7 @@ import CounterButton from "./components/CounterButton";
 import CartProduct from "./components/CartProduct";
 import Carrousel from "./components/Carrousel";
 import "./styles/App.css";
+import ImageSection from "./components/ImageSection";
 
 function App() {
   const context = useContext(GeneralContext);
@@ -15,9 +16,8 @@ function App() {
       <main className=" w-[75%] flex  items-center justify-center flex-col">
         <Nav />
         <div className=" w-full px-12 py-[72px] grid grid-cols-2 gap-28 ">
-          <section className="">
-            <Carrousel/>
-          </section>
+          <ImageSection />
+          {context?.carrousel && <Carrousel />}
           <section className="pt-8">
             <span className="text-[var(--Orange)] font-bold tracking-wider uppercase">
               Sneaker Company
