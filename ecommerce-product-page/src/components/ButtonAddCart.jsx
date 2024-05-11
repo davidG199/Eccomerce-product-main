@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import cart from "../../assets/icon-cart.svg";
 import { GeneralContext } from "../context";
 import "../styles/index.css"
+import CartIcon from "./icons/CartIcon";
 
 function ButtonAddCart() {
   const context = useContext(GeneralContext);
@@ -13,7 +14,7 @@ function ButtonAddCart() {
       onClick={() => context.addProduct()}
       
     >
-      <img src={cart} alt="cart-icon" className=" invert" />
+      <CartIcon fill="white"/>
       <p className="ml-4 font-bold">Add to cart</p>
     </div>
   );

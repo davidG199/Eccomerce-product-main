@@ -8,7 +8,7 @@
   --Orange-transparent: hsl(26, 100%, 90%);
   --Pale-orange: hsl(25, 100%, 94%);
   --Very-dark-blue: hsl(220, 13%, 13%);
-  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Dark-grayish-blue: hsl(217, 9%, 45%);
   --Grayish-blue: hsl(220, 14%, 75%);
   --Light-grayish-blue: hsl(223, 64%, 98%);
   --White-transparent: hsl(0, 0%, 100%);
@@ -34,7 +34,7 @@ nav .nav-items ul li {
 nav .nav-items ul li::before {
   content: "";
   position: absolute;
-  bottom: -34px; 
+  bottom: -34px;
   left: 0;
   height: 5px;
   background-color: var(--Orange);
@@ -45,9 +45,14 @@ nav .nav-items ul li::before {
 
 nav .nav-items ul li:hover::before {
   width: 100%;
-  transform: scaleX(1)
+  transform: scaleX(1);
 }
 
-.btn{
+.btn {
   box-shadow: 0px 20px 25px -5px hsla(26, 100%, 55%, 0.3);
+}
+
+
+.icon-close:hover {
+  fill: var(--Orange);
 }

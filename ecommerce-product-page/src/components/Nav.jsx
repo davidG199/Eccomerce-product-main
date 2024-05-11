@@ -4,6 +4,7 @@ import Cart from "../../assets/icon-cart.svg";
 import Avatar from "../../public/images/image-avatar.png";
 import "../styles/index.css";
 import { GeneralContext } from "../context";
+import CartIcon from "./icons/CartIcon";
 
 function Nav() {
   const {
@@ -52,7 +53,7 @@ function Nav() {
       <div className="flex items-center gap-10">
         <div>
           <a onClick={() => toggleCart()} className="cursor-pointer">
-            <img src={Cart} alt="icon-cart" />
+            <CartIcon fill="#68707d" />
           </a>
           {product && (
             <span className=" bg-[var(--Orange)] text-white w-5 text-center rounded-xl text-[10px] absolute top-9 right-[275px]">
@@ -64,7 +65,7 @@ function Nav() {
           <img
             src={Avatar}
             alt="avatar-nav"
-            className=" w-full hover:outline-2 hover:border-2 border-[var(--Orange)] rounded-full cursor-pointer"
+            className=" w-full hover:border-2 border-[var(--Orange)] rounded-full cursor-pointer"
           />
         </a>
       </div>
