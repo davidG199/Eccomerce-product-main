@@ -1,68 +1,86 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { GeneralContext } from "../context";
-import IconClose from "./icons/IconClose"
-import "../styles/index.css"
+import IconClose from "./icons/IconClose";
+import NextIcon from "./icons/NextIcon";
+import PreviousIcon from "./icons/PreviousIcon";
+
+import "../styles/index.css";
 
 function Carrousel() {
-  const {togleCarrousel, images} = useContext(GeneralContext);
+  const { togleCarrousel, images } = useContext(GeneralContext);
+  const [curr, setCurr] = useState(0);
+
+  const slidesArray = Object.values(images.slides);
+  const prev = () =>
+    setCurr((curr) => (curr == 0 ? slidesArray.length - 1 : curr - 1));
+  const next = () =>
+    setCurr((curr) => (curr == slidesArray.length - 1 ? 0 : curr + 1));
 
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-80 z-50">
       <div className="flex flex-col justify-center items-center">
+        <span className=" ml-auto mb-5">
+          <IconClose
+            fill="white"
+            className="icon-close cursor-pointer"
+            onClick={togleCarrousel}
+            width={24}
+            height={24}
+          />
+        </span>
 
-      <span className=" ml-auto mb-5">
-        <IconClose
-        fill = "white"
-        className="icon-close cursor-pointer"
-        onClick={togleCarrousel}
-        width={24}
-        height={24}
-        />
-      </span>
-
-        <div>
-            <img 
-            src={images.slides.image1} 
-            alt="slide"
-            className="rounded-xl h-[420px]"
-            color="white"
-            />
+       
+        <div className=" overflow-hidden relative">
+          <div className="flex transition-transform ease-out duration-500">
+            {slidesArray.map((item, index) => {
+              return (
+                <img
+                  src={item}
+                  className={`rounded-xl h-[420px] ${
+                    index === curr ? "block" : "hidden"
+                  }`}
+                  alt="slide"
+                  key={index}
+                />
+              );
+            })}
+          </div>
+          <div className=" absolute inset-0 flex items-center justify-between">
+            <button className=" p-4 rounded-full shadow bg-white ml-[-5%] " >
+              <PreviousIcon
+                className="icon-carrousel"
+                onClick={prev}
+              />
+            </button>
+            <button className=" p-4 rounded-full shadow bg-white mr-[-5%]">
+              <NextIcon
+                className="icon-carrousel"
+                onClick={next}
+              />
+            </button>
+          </div>
         </div>
 
-        
         <div className="flex flex-row gap-8 mt-8">
-          <figure className="h-20 w-20 border-2 border-[var(--Orange)] rounded-xl bg-white">
-            <img
-              src={images.slidesThumbnail.thumbnail1}
-              alt="thumbnail-1"
-              className=" h-full w-full opacity-30 cursor-pointer rounded-xl"
-              onClick={() => togleCarrousel()}
-            />
-          </figure>
-          <figure className="bg-white rounded-xl h-20 w-20">
-            <img
-              src={images.slidesThumbnail.thumbnail2}
-              alt="thumbnail-2"
-              className="rounded-xl h-full w-full hover:opacity-30  cursor-pointer"
-              onClick={() => togleCarrousel()}
-            />
-          </figure>
-          <figure className="bg-white rounded-xl h-20 w-20">
-            <img
-              src={images.slidesThumbnail.thumbnail3}
-              alt="thumbnail-3"
-              className="rounded-xl h-full w-full hover:opacity-30 cursor-pointer"
-              onClick={() => togleCarrousel()}
-            />
-          </figure>
-          <figure className="bg-white rounded-xl h-20 w-20">
-            <img
-              src={images.slidesThumbnail.thumbnail4}
-              alt="thumbnail-4"
-              className="rounded-xl h-full w-full hover:opacity-30 cursor-pointer"
-              onClick={() => togleCarrousel()}
-            />
-          </figure>
+          {Object.values(images.slidesThumbnail).map((item, index) => {
+            return (
+              <figure
+                className={`h-20 w-20 rounded-xl bg-white ${
+                  index === curr ? "border-2 border-[var(--Orange)]" : ""
+                }`}
+              >
+                <img
+                  key={index}
+                  src={item}
+                  alt={`thumbnail-${index + 1}`}
+                  className={`h-full w-full cursor-pointer rounded-xl ${
+                    index === curr ? "opacity-30" : ""
+                  }`}
+                  onClick={() => setCurr(index)}
+                />
+              </figure>
+            );
+          })}
         </div>
       </div>
     </div>
