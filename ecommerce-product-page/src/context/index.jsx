@@ -39,16 +39,16 @@ export const ContextProvider = ({ children }) => {
 
   const images = {
     slides: {
-      image1: "../../public/images/image-product-1.jpg",
-      image2: "../../public/images/image-product-2.jpg",
-      image3: "../../public/images/image-product-3.jpg",
-      image4: "../../public/images/image-product-4.jpg",
+      image1: "../../images/image-product-1.jpg",
+      image2: "../../images/image-product-2.jpg",
+      image3: "../../images/image-product-3.jpg",
+      image4: "../../images/image-product-4.jpg",
     },
     slidesThumbnail: {
-      thumbnail1: "../../public/images/image-product-1-thumbnail.jpg",
-      thumbnail2: "../../public/images/image-product-2-thumbnail.jpg",
-      thumbnail3: "../../public/images/image-product-3-thumbnail.jpg",
-      thumbnail4: "../../public/images/image-product-4-thumbnail.jpg",
+      thumbnail1: "../../images/image-product-1-thumbnail.jpg",
+      thumbnail2: "../../images/image-product-2-thumbnail.jpg",
+      thumbnail3: "../../images/image-product-3-thumbnail.jpg",
+      thumbnail4: "../../images/image-product-4-thumbnail.jpg",
     },
   };
 

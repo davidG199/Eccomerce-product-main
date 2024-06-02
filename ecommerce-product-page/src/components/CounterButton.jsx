@@ -7,7 +7,7 @@ function CounterButton() {
   const { count, decrementCount, incrementCount } = useContext(GeneralContext);
 
   return (
-    <div className="flex items-center justify-around bg-[var(--Light-grayish-blue)] grow-[1] rounded-lg">
+    <div className="flex items-center justify-around bg-[var(--Light-grayish-blue)] grow-[1] rounded-lg py-3">
       <span className="hover:text-[var(----Orange-transparent)]">
         <img
           src={MinusIcon}

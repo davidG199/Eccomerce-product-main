@@ -6,18 +6,18 @@ function ImageSection() {
   const { images, togleCarrousel, carrousel } = useContext(GeneralContext);
 
   return (
-    <section className="">
+    <section>
       <div className="flex flex-col justify-center items-center">
         <div>
           <img
             src={images.slides.image1}
             alt="slider-1"
-            className="rounded-xl h-[420px] cursor-pointer"
+            className="md:rounded-xl h-[420px] cursor-pointer"
             onClick={() => togleCarrousel()}
           />
         </div>
 
-        <div className="flex flex-row gap-8 mt-8">
+        <div className="md:flex flex-row gap-8 mt-8 hidden">
           <figure className="border-2 border-[var(--Orange)] rounded-xl">
             <img
               src={images.slidesThumbnail.thumbnail1}

@@ -3,7 +3,6 @@ import { GeneralContext } from "../context";
 import IconClose from "./icons/IconClose";
 import NextIcon from "./icons/NextIcon";
 import PreviousIcon from "./icons/PreviousIcon";
-
 import "../styles/index.css";
 
 function Carrousel() {
@@ -28,8 +27,7 @@ function Carrousel() {
             height={24}
           />
         </span>
-
-       
+        {/* images render */}
         <div className=" overflow-hidden relative">
           <div className="flex transition-transform ease-out duration-500">
             {slidesArray.map((item, index) => {
@@ -44,28 +42,23 @@ function Carrousel() {
                 />
               );
             })}
-          </div>
-          <div className=" absolute inset-0 flex items-center justify-between">
-            <button className=" p-4 rounded-full shadow bg-white ml-[-5%] " >
-              <PreviousIcon
-                className="icon-carrousel"
-                onClick={prev}
-              />
-            </button>
-            <button className=" p-4 rounded-full shadow bg-white mr-[-5%]">
-              <NextIcon
-                className="icon-carrousel"
-                onClick={next}
-              />
-            </button>
-          </div>
+          {/* buttons carrousel */}
         </div>
-
+          <div className=" absolute inset-0 flex items-center justify-between">
+            <button className=" p-4 rounded-full shadow bg-white">
+              <PreviousIcon className="icon-carrousel" onClick={prev} />
+            </button>
+            <button className=" p-4 rounded-full shadow bg-white ">
+              <NextIcon className="icon-carrousel" onClick={next} />
+            </button>
+          </div>
+          </div>
+        {/* images thumbnail */}
         <div className="flex flex-row gap-8 mt-8">
           {Object.values(images.slidesThumbnail).map((item, index) => {
             return (
               <figure
-                className={`h-20 w-20 rounded-xl bg-white ${
+                className={` h-[70px] w-[70px] rounded-xl bg-white ${
                   index === curr ? "border-2 border-[var(--Orange)]" : ""
                 }`}
               >

@@ -10,7 +10,7 @@ function ButtonAddCart() {
   return (
     <div
       className="flex items-center justify-center bg-[var(--Orange)] grow-[2] text-white rounded-lg cursor-pointer
-       hover:bg-[var(--Orange-hover)] btn"
+       hover:bg-[var(--Orange-hover)] btn py-3 mb-10"
       onClick={() => context.addProduct()}
       
     >
